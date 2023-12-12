@@ -1,0 +1,53 @@
+-- INSERT DATA INTO EMPLOYEE TABLE
+INSERT INTO Employee (First_Name, Last_Name, Hire_Date, Birth_Date, City, State)
+VALUES
+  ('John', 'Doe', '2022-01-01', '1990-05-15', 'New York', 'NY'),
+  ('Jane', 'Smith', '2022-02-15', '1985-08-22', 'Los Angeles', 'CA'),
+  ('Mike', 'Johnson', '2022-03-10', '1992-11-03', 'Chicago', 'IL'),
+  ('Emily', 'Williams', '2022-04-20', '1988-07-12', 'San Francisco', 'CA'),
+  ('David', 'Brown', '2022-05-05', '1995-02-28', 'Seattle', 'WA');
+
+-- INSERT DATA INTO SALARY TABLE
+INSERT INTO Salary (Employee_Id, Gross_Salary, Deductions, Net_Salary, Payroll_Date)
+VALUES
+  (1, 60000, 5000, 55000, '2022-06-01'),
+  (2, 75000, 6000, 69000, '2022-06-01'),
+  (3, 50000, 4500, 45500, '2022-06-01'),
+  (4, 80000, 7000, 73000, '2022-06-01'),
+  (5, 65000, 5500, 59500, '2022-06-01');
+
+-- INSERT DATA INTO DEPARTMENT TABLE
+INSERT INTO Department (Department_Name)
+VALUES
+  ('Human Resources'),
+  ('Finance'),
+  ('IT'),
+  ('Marketing'),
+  ('Operations');
+
+-- INSERT DATA INTO EMPLOYEEDEPARTMENT TABLE
+INSERT INTO EmployeeDepartment (Employee_Id, Department_Id)
+VALUES
+  (1, 1),
+  (2, 2),
+  (3, 3),
+  (4, 4),
+  (5, 5);
+
+-- INSERT DATA INTO BONUS TABLE
+INSERT INTO Bonus (Employee_Id, Bonus_Amount, Bonus_Date)
+VALUES
+  (1, 2000, '2022-07-01'),
+  (2, 1500, '2022-07-01'),
+  (3, 1000, '2022-07-01'),
+  (4, 2500, '2022-07-01'),
+  (5, 1800, '2022-07-01');
+
+-- INSERT DATA INTO DEDUCTION TABLE
+INSERT INTO Deduction (Employee_Id, Deduction_Amount, Deduction_Date)
+VALUES
+  (1, 1000, '2022-07-01'),
+  (2, 800, '2022-07-01'),
+  (3, 500, '2022-07-01'),
+  (4, 1200, '2022-07-01'),
+  (5, 1000, '2022-07-01');
