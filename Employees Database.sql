@@ -50,6 +50,67 @@ CREATE TABLE Deduction (
   Deduction_Date DATE
 );
 
+-- Leave
+CREATE TABLE Leave (
+  Leave_Id SERIAL PRIMARY KEY,
+  Employee_Id INTEGER REFERENCES Employee(Employee_Id),
+  Leave_date DATE
+);
+
+-- Work_Location
+CREATE TABLE Work_Location (
+  Location_Id SERIAL PRIMARY KEY,
+  Location VARCHAR(25),
+  Number_Of_Employees INTEGER,
+  City VARCHAR(25),
+  State VARCHAR(25)
+);
+
+-- AccountDetails
+CREATE TABLE AccountDetails (
+  Account_Id SERIAL PRIMARY KEY,
+  Bank_Name VARCHAR(50),
+  Account_Number VARCHAR(50),
+  Employee_Id INTEGER REFERENCES Employee(Employee_Id)
+);
+
+-- Education
+CREATE TABLE Education (
+  Education_Id SERIAL PRIMARY KEY,
+  Employee_Id INTEGER REFERENCES Employee(Employee_Id),
+  Degree VARCHAR(30),
+  Graduation_Year INTEGER
+);
+
+-- DepartmentProject Bridge
+CREATE TABLE DepartmentProject (
+  Department_Id INTEGER REFERENCES Department(Department_Id),
+  Project_Id INTEGER REFERENCES Project(Project_Id),
+  PRIMARY KEY (Department_Id, Project_Id)
+);
+
+-- Project
+CREATE TABLE Project (
+  Project_Id SERIAL PRIMARY KEY,
+  Project_Name VARCHAR(50),
+  Project_Description VARCHAR(50)
+);
+
+-- Attendance
+CREATE TABLE Attendance (
+  Attendance_Id SERIAL PRIMARY KEY,
+  Hours_Worked NUMERIC
+);
+
+-- EmployeeAttendance Bridge
+CREATE TABLE Employee_Attendance (
+  Employee_Id INTEGER REFERENCES Employee(Employee_Id),
+  Attendance_Id INTEGER REFERENCES Attendance(Attendance_Id),
+  PRIMARY KEY (Employee_Id, Attendance_Id)
+);
+
+
+
 -- CREATE INDEXES FOR FOREIGN KEY PERFORMANCE OPTIMIZATION --
 
 -- Index on Employee_Id in Salary table
@@ -66,61 +127,3 @@ CREATE INDEX idx_bonus_employee_id ON Bonus(Employee_Id);
 CREATE INDEX idx_deduction_employee_id ON Deduction(Employee_Id);
 
 
-
-
---------------------------
---insert data into the tables
-
--- INSERT DATA INTO EMPLOYEE TABLE
-INSERT INTO Employee (First_Name, Last_Name, Hire_Date, Birth_Date, City, State)
-VALUES
-  ('John', 'Doe', '2022-01-01', '1990-05-15', 'New York', 'NY'),
-  ('Jane', 'Smith', '2022-02-15', '1985-08-22', 'Los Angeles', 'CA'),
-  ('Mike', 'Johnson', '2022-03-10', '1992-11-03', 'Chicago', 'IL'),
-  ('Emily', 'Williams', '2022-04-20', '1988-07-12', 'San Francisco', 'CA'),
-  ('David', 'Brown', '2022-05-05', '1995-02-28', 'Seattle', 'WA');
-
--- INSERT DATA INTO SALARY TABLE
-INSERT INTO Salary (Employee_Id, Gross_Salary, Deductions, Net_Salary, Payroll_Date)
-VALUES
-  (1, 60000, 5000, 55000, '2022-06-01'),
-  (2, 75000, 6000, 69000, '2022-06-01'),
-  (3, 50000, 4500, 45500, '2022-06-01'),
-  (4, 80000, 7000, 73000, '2022-06-01'),
-  (5, 65000, 5500, 59500, '2022-06-01');
-
--- INSERT DATA INTO DEPARTMENT TABLE
-INSERT INTO Department (Department_Name)
-VALUES
-  ('Human Resources'),
-  ('Finance'),
-  ('IT'),
-  ('Marketing'),
-  ('Operations');
-
--- INSERT DATA INTO EMPLOYEEDEPARTMENT TABLE
-INSERT INTO EmployeeDepartment (Employee_Id, Department_Id)
-VALUES
-  (1, 1),
-  (2, 2),
-  (3, 3),
-  (4, 4),
-  (5, 5);
-
--- INSERT DATA INTO BONUS TABLE
-INSERT INTO Bonus (Employee_Id, Bonus_Amount, Bonus_Date)
-VALUES
-  (1, 2000, '2022-07-01'),
-  (2, 1500, '2022-07-01'),
-  (3, 1000, '2022-07-01'),
-  (4, 2500, '2022-07-01'),
-  (5, 1800, '2022-07-01');
-
--- INSERT DATA INTO DEDUCTION TABLE
-INSERT INTO Deduction (Employee_Id, Deduction_Amount, Deduction_Date)
-VALUES
-  (1, 1000, '2022-07-01'),
-  (2, 800, '2022-07-01'),
-  (3, 500, '2022-07-01'),
-  (4, 1200, '2022-07-01'),
-  (5, 1000, '2022-07-01');
