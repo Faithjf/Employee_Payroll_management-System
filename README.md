@@ -3,42 +3,49 @@ The Employee Payroll Management Database is a structured and relational database
 # PURPOSE
 The Employee Payroll Management Database serves as the backbone for the Employee Payroll Management System, enabling organizations to streamline HR processes, automate payroll calculations, and maintain accurate and up-to-date employee records. By organizing data into interconnected tables, the database facilitates efficient data retrieval, reporting, and analysis for informed decision-making within the realm of human resources and payroll management.
 
-**Employee Payroll Management System Overview**
 
-**Start:** 
-- The system begins by capturing employee information.
+## Database Structure:
 
-**Employee Table:**
-- Employees are entered into the system with details such as first name, last name, hire date, birth date, city, and state.
+1. **Employee Table:**
+   - Stores essential details about employees, including names, hire dates, birth dates, and location information.
 
-**EmployeeDepartment Table:**
-- Employees are associated with departments using the EmployeeDepartment bridge table.
-- This table establishes the relationships between employees and the departments they belong to.
+2. **Department Table:**
+   - Manages department details, allowing for the categorization and organization of employees.
 
-**Department Table:**
-- Departments are defined within the system.
+3. **EmployeeDepartment Bridge Table:**
+   - Establishes relationships between employees and the departments they are associated with.
 
-**Salary Table:**
-- The Salary table is linked to the Employee table through the Employee_Id foreign key.
-- It captures key financial information, including gross salary, deductions, net salary, and the payroll date.
+4. **Salary Table:**
+   - Records financial information, such as gross salary, deductions, net salary, and payroll dates for each employee.
 
-**Bonus Table:**
-- Employee bonuses are recorded in the Bonus table.
-- The table is connected to the Employee table via the Employee_Id foreign key.
-- Bonus amounts and bonus dates are specified.
+5. **Bonus Table:**
+   - Captures data related to employee bonuses, including bonus amounts and corresponding dates.
 
-**Deduction Table:**
-- Deductions made from employee salaries are documented in the Deduction table.
-- Similar to Bonus, the Deduction table is associated with the Employee table through the Employee_Id foreign key.
-- Deduction amounts and dates are recorded.
+6. **Deduction Table:**
+   - Tracks deductions from employee salaries, detailing deduction amounts and associated dates.
 
-**End:**
-- The system flow concludes.
+7. **Education Table:**
+   - Records educational background information for employees, linking educational records to individual employees.
+
+8. **Leave Table:**
+   - Manages employee leave records, including leave IDs, employee IDs, and leave dates.
+
+9. **Employee_Attendance Bridge Table:**
+   - Establishes connections between employees and their attendance records.
+
+10. **Attendance Table:**
+    - Captures attendance data, including hours worked, providing insights into employee attendance patterns.
+
+11. **Work_Location Table:**
+    - Manages information related to work locations, such as location IDs, names, and employee counts.
+
+12. **AccountDetails Table:**
+    - Stores details about employee accounts, including account IDs, bank names, account numbers, and employee IDs.
 
 **Key Takeaways:**
 - Employee data is centralized in the Employee table.
 - Relationships between employees and departments are managed through the EmployeeDepartment bridge table.
-- Financial details, including salary, bonuses, and deductions, are tracked in separate tables.
+- Financial details, including salary, bonuses, leave, and deductions, are tracked in separate tables.
 - This structured approach allows for efficient management of employee payroll information.
 
-  ![image text](https://github.com/Faithjf/Employee_Payroll_management-System/blob/main/Employee%20ERD.png)
+  ![image text](https://github.com/Faithjf/Employee_Payroll_management-System/blob/main/ERD%20employee%20project%20git.png)
