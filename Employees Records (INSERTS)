@@ -1,0 +1,125 @@
+-- INSERT DATA INTO EMPLOYEE TABLE
+INSERT INTO Employee (First_Name, Last_Name, Hire_Date, Birth_Date, City, State)
+VALUES
+  ('John', 'Doe', '2022-01-01', '1990-05-15', 'New York', 'NY'),
+  ('Jane', 'Smith', '2022-02-15', '1985-08-22', 'Los Angeles', 'CA'),
+  ('Mike', 'Johnson', '2022-03-10', '1992-11-03', 'Chicago', 'IL'),
+  ('Emily', 'Williams', '2022-04-20', '1988-07-12', 'San Francisco', 'CA'),
+  ('David', 'Brown', '2022-05-05', '1995-02-28', 'Seattle', 'WA');
+
+-- INSERT DATA INTO SALARY TABLE
+INSERT INTO Salary (Employee_Id, Gross_Salary, Deductions, Net_Salary, Payroll_Date)
+VALUES
+  (1, 60000, 5000, 55000, '2022-06-01'),
+  (2, 75000, 6000, 69000, '2022-06-01'),
+  (3, 50000, 4500, 45500, '2022-06-01'),
+  (4, 80000, 7000, 73000, '2022-06-01'),
+  (5, 65000, 5500, 59500, '2022-06-01');
+
+-- INSERT DATA INTO DEPARTMENT TABLE
+INSERT INTO Department (Department_Name)
+VALUES
+  ('Human Resources'),
+  ('Finance'),
+  ('IT'),
+  ('Marketing'),
+  ('Operations');
+
+-- INSERT DATA INTO EMPLOYEEDEPARTMENT TABLE
+INSERT INTO EmployeeDepartment (Employee_Id, Department_Id)
+VALUES
+  (1, 1),
+  (2, 2),
+  (3, 3),
+  (4, 4),
+  (5, 5);
+
+-- INSERT DATA INTO BONUS TABLE
+INSERT INTO Bonus (Employee_Id, Bonus_Amount, Bonus_Date)
+VALUES
+  (1, 2000, '2022-07-01'),
+  (2, 1500, '2022-07-01'),
+  (3, 1000, '2022-07-01'),
+  (4, 2500, '2022-07-01'),
+  (5, 1800, '2022-07-01');
+
+-- INSERT DATA INTO DEDUCTION TABLE
+INSERT INTO Deduction (Employee_Id, Deduction_Amount, Deduction_Date)
+VALUES
+  (1, 1000, '2022-07-01'),
+  (2, 800, '2022-07-01'),
+  (3, 500, '2022-07-01'),
+  (4, 1200, '2022-07-01'),
+  (5, 1000, '2022-07-01');
+
+-- INSERT DATA INTO LEAVE TABLE
+INSERT INTO Leave (Employee_Id, Leave_date)
+VALUES
+  (1, '2022-08-01'),
+  (2, '2022-08-02'),
+  (3, '2022-08-03'),
+  (4, '2022-08-04'),
+  (5, '2022-08-05');
+
+-- INSERT DATA INTO WORK_LOCATION TABLE
+INSERT INTO Work_Location (Location_Id, Location, Number_Of_Employees, City, State)
+VALUES
+  (1, 'Headquarters', 100, 'New York', 'NY'),
+  (2, 'Branch A', 50, 'Los Angeles', 'CA'),
+  (3, 'Branch B', 30, 'Chicago', 'IL'),
+  (4, 'Branch C', 20, 'San Francisco', 'CA'),
+  (5, 'Branch D', 25, 'Seattle', 'WA');
+
+-- INSERT DATA INTO ACCOUNTDETAILS TABLE
+INSERT INTO AccountDetails (Bank_Name, Account_Number, Employee_Id)
+VALUES
+  ('Bank A', '123456789', 1),
+  ('Bank B', '987654321', 2),
+  ('Bank C', '456789123', 3),
+  ('Bank D', '321654987', 4),
+  ('Bank E', '654321789', 5);
+
+-- INSERT DATA INTO EDUCATION TABLE
+INSERT INTO Education (Employee_Id, Degree, Graduation_Year)
+VALUES
+  (1, 'Bachelor of Science', 2010),
+  (2, 'Master of Business Administration', 2015),
+  (3, 'Bachelor of Arts', 2012),
+  (4, 'Master of Science', 2017),
+  (5, 'Bachelor of Engineering', 2014);
+
+-- INSERT DATA INTO DEPARTMENTPROJECT TABLE
+INSERT INTO DepartmentProject (Department_Id, Project_Id)
+VALUES
+  (1, 1),
+  (2, 2),
+  (3, 3),
+  (4, 4),
+  (5, 5);
+
+-- INSERT DATA INTO PROJECT TABLE
+INSERT INTO Project (Project_Id, Project_Name, Project_Description)
+VALUES
+  (1, 'Project A', 'Description for Project A'),
+  (2, 'Project B', 'Description for Project B'),
+  (3, 'Project C', 'Description for Project C'),
+  (4, 'Project D', 'Description for Project D'),
+  (5, 'Project E', 'Description for Project E');
+
+-- INSERT DATA INTO ATTENDANCE TABLE
+INSERT INTO Attendance (Attendance_Id, Hours_Worked)
+VALUES
+  (1, 8),
+  (2, 7),
+  (3, 8),
+  (4, 7),
+  (5, 8);
+
+-- INSERT DATA INTO EMPLOYEE_ATTENDANCE TABLE
+INSERT INTO Employee_Attendance (Employee_Id, Attendance_Id)
+VALUES
+  (1, 1),
+  (2, 2),
+  (3, 3),
+  (4, 4),
+  (5, 5);
